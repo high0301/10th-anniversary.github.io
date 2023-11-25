@@ -5,7 +5,7 @@
   overflow: hidden;
   &.mainIndex {
     height: 100vh;
-    background: #101010 url('/static/images/main_bg_text.png') no-repeat center center;
+    background: #101010 url('../images/main_bg_text.png') no-repeat center center;
     overflow: hidden;
     @keyframes index-ani1 {
       0% {
