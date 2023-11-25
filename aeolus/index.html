@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>가막미르 10주년 합작 - 아이올루스</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/layout.css">
+    <link rel="stylesheet" href="../static/css/contents.css">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.slim.js"
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="../static/lib/fullpage.js/vendors/easings.js"></script>
+    <script src="../static/js/bg.js"></script>
+    <script src="../static/js/common.js"></script>
+</head>
+<body>
+<div id="container" class="aeolus">
+    <div class="btnArea">
+        <button type="button" class="btn back" onclick="pageBack();"></button>
+        <button type="button" class="btn top" onclick="goTop();"></button>
+    </div>
+    <div class="bgArea">
+        <div class="overlay"></div>
+        <div class="layerWrap">
+        </div>
+    </div>
+    <main>
+        <h1>아이올루스</h1>
+        <div id="imageList">
+            <section>
+                <div class="character" id="noire">
+                    <div class="main"><img src="../static/images/noire/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/noire/name.png" alt=""></div>
+                    <div class="title"><img src="../static/images/noire/title.png" alt=""></div>
+                </div>
+            </section>
+            <section>
+                <div class="character" id="sk">
+                    <div class="main"><img src="../static/images/simeon-kyle/main.png" alt=""></div>
+                    <div class="name name-k"><img src="../static/images/simeon-kyle/k_name.png" alt=""></div>
+                    <div class="title title-k"><img src="../static/images/simeon-kyle/k_title.png" alt=""></div>
+                    <div class="name name-s"><img src="../static/images/simeon-kyle/s_name.png" alt=""></div>
+                    <div class="title title-s"><img src="../static/images/simeon-kyle/s_title.png" alt=""></div>
+                </div>
+            </section>
+            <section>
+                <div class="character" id="corbeau">
+                    <div class="main"><img src="../static/images/corbeau/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/corbeau/name.png" alt=""></div>
+                    <div class="title"><img src="../static/images/corbeau/title.png" alt=""></div>
+                </div>
+            </section>
+            <section>
+                <div class="character" id="sc">
+                    <div class="main"><img src="../static/images/simeon-corbeau/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/simeon-corbeau/name.png" alt=""></div>
+                    <div class="title"><img src="../static/images/simeon-corbeau/title.png" alt=""></div>
+                </div>
+            </section>
+            <section>
+                <div class="character" id="siel">
+                    <div class="main"><img src="../static/images/siel/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/siel/name.png" alt=""></div>
+                    <div class="title"><img src="../static/images/siel/title.png" alt=""></div>
+                </div>
+            </section>
+            <section>
+                <div class="character" id="simeon-3">
+                    <div class="main"><img src="../static/images/simeon-3/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/simeon-3/name.png" alt=""></div>
+                    <div class="title"><img src="../static/images/simeon-3/title.png" alt=""></div>
+                </div>
+            </section>
+            <section>
+                <div class="character" id="eugene">
+                    <div class="main"><img src="../static/images/eugene/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/eugene/name.png" alt=""></div>
+                    <div class="title"><img src="../static/images/eugene/title.png" alt=""></div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#noire',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#noire").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#noire").addClass("active");
+            },
+            onLeave: function () {
+                $("#noire").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#noire").removeClass("active");
+            }
+        },
+        duration: 1
+    })
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#sk',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#sk").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#sk").addClass("active");
+            },
+            onLeave: function () {
+                $("#sk").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#sk").removeClass("active");
+            }
+        },
+        duration: 1
+    })
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#corbeau',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#corbeau").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#corbeau").addClass("active");
+            },
+            onLeave: function () {
+                $("#corbeau").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#corbeau").removeClass("active");
+            }
+        },
+        duration: 1
+    })
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#sc',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#sc").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#sc").addClass("active");
+            },
+            onLeave: function () {
+                $("#sc").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#sc").removeClass("active");
+            }
+        },
+        duration: 1
+    })
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#siel',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#siel").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#siel").addClass("active");
+            },
+            onLeave: function () {
+                $("#siel").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#siel").removeClass("active");
+            }
+        },
+        duration: 1
+    })
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#eugene',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#eugene").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#eugene").addClass("active");
+            },
+            onLeave: function () {
+                $("#eugene").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#eugene").removeClass("active");
+            }
+        },
+        duration: 1
+    })
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#simeon-3',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#simeon-3").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#simeon-3").addClass("active");
+            },
+            onLeave: function () {
+                $("#simeon-3").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#simeon-3").removeClass("active");
+            }
+        },
+        duration: 1
+    })
+</script>
+</body>
+</html>

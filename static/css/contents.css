@@ -162,4 +162,162 @@ html, body {
   left: 0;
 }
 
+#container.aeolus {
+  color: #fff;
+}
+#container.aeolus h1 {
+  font-size: 400px;
+  font-family: "Chosunilbo_myungjo", Arial, sans-serif;
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  animation: h1-ani1 2s 0.2s forwards cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+@keyframes h1-ani1 {
+  0% {
+    opacity: 0;
+    letter-spacing: -0.5em;
+  }
+  100% {
+    opacity: 0.05;
+    margin-top: 0;
+    letter-spacing: -0.025em;
+  }
+}
+#container.aeolus section {
+  padding: 160px 30px;
+}
+#container.aeolus section.black {
+  background-image: -webkit-linear-gradient(top, #111 5%, #000 20%);
+}
+#container.aeolus section .character {
+  max-width: 1200px;
+  transition: all 1.5s;
+  opacity: 0;
+  transform: translateY(-100px);
+}
+#container.aeolus section .character .name, #container.aeolus section .character .title {
+  opacity: 0;
+  margin-top: -50px;
+  transition: all 0.75s;
+}
+#container.aeolus section .character.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#container.aeolus section .character.active .name, #container.aeolus section .character.active .title {
+  margin-top: 0;
+  opacity: 1;
+}
+#container.aeolus section .character.active .name {
+  transition-delay: 0.3s;
+}
+#container.aeolus section .character#noire .name {
+  bottom: 150px;
+  right: 0;
+  margin-bottom: 50px;
+}
+#container.aeolus section .character#noire .title {
+  top: 0;
+  right: 0;
+}
+#container.aeolus section .character#noire.active .name {
+  margin-bottom: 0;
+  transition-delay: 0.85s;
+}
+#container.aeolus section .character#sk .name-k {
+  top: 150px;
+  right: 0;
+}
+#container.aeolus section .character#sk .name-s {
+  bottom: 110px;
+  left: 170px;
+  margin-bottom: -50px;
+}
+#container.aeolus section .character#sk .title-k {
+  bottom: 80px;
+  right: 146px;
+  margin-bottom: -50px;
+}
+#container.aeolus section .character#sk .title-s {
+  top: 100px;
+  left: 0;
+}
+#container.aeolus section .character#sk.active .name-s {
+  margin-bottom: 0;
+  transition-delay: 1s;
+}
+#container.aeolus section .character#sk.active .title-k {
+  margin-bottom: 0;
+  transition-delay: 1.5s;
+}
+#container.aeolus section .character#corbeau .name {
+  top: 250px;
+  right: 0;
+}
+#container.aeolus section .character#corbeau .title {
+  top: 0;
+  left: 2%;
+}
+#container.aeolus section .character#sc .name {
+  bottom: 70px;
+  right: -200px;
+  margin-bottom: 50px;
+  z-index: -1;
+}
+#container.aeolus section .character#sc .title {
+  top: 0;
+  left: 30px;
+}
+#container.aeolus section .character#sc.active .name {
+  margin-bottom: 0;
+}
+#container.aeolus section .character#siel .name {
+  bottom: 50px;
+  left: 380px;
+  z-index: -1;
+  margin-bottom: 50px;
+}
+#container.aeolus section .character#siel .title {
+  top: 10px;
+  right: 50px;
+  z-index: -1;
+}
+#container.aeolus section .character#siel.active .name {
+  margin-bottom: 0;
+  transition-delay: 0.6s;
+}
+#container.aeolus section .character#simeon-3 .name {
+  top: 0;
+  left: 60px;
+  z-index: -1;
+}
+#container.aeolus section .character#simeon-3 .title {
+  bottom: 210px;
+  right: 0;
+  margin-bottom: 50px;
+}
+#container.aeolus section .character#simeon-3.active .title {
+  transition-delay: 0.8s;
+  margin-bottom: 0;
+}
+#container.aeolus section .character#eugene .name {
+  top: 210px;
+  left: 90px;
+  z-index: -1;
+}
+#container.aeolus section .character#eugene .title {
+  bottom: 130px;
+  left: 130px;
+  margin-bottom: 50px;
+}
+#container.aeolus section .character#eugene.active .title {
+  margin-bottom: 0;
+  transition-delay: 0.8s;
+}
+
 /*# sourceMappingURL=contents.css.map */
