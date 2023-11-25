@@ -1,0 +1,179 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BookkMyungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+#container {
+  width: 100vw;
+  height: 100vh;
+  background: #101010;
+}
+#container.mainIndex {
+  background: #101010 url("/static/images/main_bg_text.png") no-repeat center center;
+  overflow: hidden;
+}
+@keyframes index-ani1 {
+  0% {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes index-ani-bar {
+  0% {
+    opacity: 0;
+    margin-top: -50px;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+    height: 485px;
+  }
+}
+#container.mainIndex main {
+  position: relative;
+  height: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#container.mainIndex main h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 81px;
+  height: 485px;
+  overflow: hidden;
+  animation: index-ani-bar 1s 0s forwards;
+}
+#container.mainIndex main h1 img {
+  position: absolute;
+  max-height: unset;
+}
+#container.mainIndex main h2 {
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "BookkMyungjo", Arial, sans-serif;
+  opacity: 0;
+  animation: index-ani1 1s 0s forwards;
+}
+#container.mainIndex .world {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  max-width: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#container.mainIndex .world li {
+  position: relative;
+  width: 142px;
+  height: 400px;
+  background: #000;
+  overflow: hidden;
+  transform: skewY(-25deg);
+  box-shadow: 1px 10px 15px 2px rgba(0, 255, 255, 0.1);
+  opacity: 0;
+}
+#container.mainIndex .world li .imgBox {
+  position: absolute;
+  transform: skewY(25deg);
+  transition: all 0.3s;
+  margin-top: 0;
+}
+#container.mainIndex .world li .imgBox:hover {
+  margin-top: 10px;
+}
+#container.mainIndex .world li.gamak {
+  transform: skewY(-25deg) translateY(60px);
+  animation: index-ani1 0.5s 0.5s forwards;
+}
+#container.mainIndex .world li.gamak .imgBox {
+  top: -30px;
+  left: -5px;
+}
+#container.mainIndex .world li.solomon {
+  transform: skewY(-25deg) translateY(-100px);
+  animation: index-ani1 0.5s 0.6s forwards;
+}
+#container.mainIndex .world li.solomon .imgBox {
+  top: -25px;
+  right: 30px;
+}
+#container.mainIndex .world li.aeolus {
+  transform: skewY(-25deg) translateY(10px);
+  animation: index-ani1 0.5s 0.7s forwards;
+}
+#container.mainIndex .world li.aeolus .imgBox {
+  top: 20px;
+  right: 0;
+}
+#container.mainIndex .bottom-bar {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  background: #17cfdf;
+  height: 10px;
+  animation: show-ani-bar 1s 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+}
+@keyframes show-ani-bar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 500px;
+  }
+}
+#container.mainIndex .bottom-bar .title {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  top: -29px;
+  animation: show-ani-text 1s 0.8s forwards;
+}
+@keyframes show-ani-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bgArea .overlay {
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.8) 80%, rgb(0, 0, 0) 90%, rgb(0, 0, 0) 100%);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.bgArea .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=layout.css.map */
