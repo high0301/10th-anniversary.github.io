@@ -10,12 +10,92 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: "Chosunilbo_myungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 html, body {
   font-family: "Pretendard", Arial, sans-serif;
 }
 
 #container.gamak {
   color: #fff;
+}
+#container.gamak h1 {
+  font-size: 400px;
+  font-family: "Chosunilbo_myungjo", Arial, sans-serif;
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  animation: h1-ani1 2s 0.2s forwards cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+@keyframes h1-ani1 {
+  0% {
+    opacity: 0;
+    letter-spacing: -0.5em;
+  }
+  100% {
+    opacity: 0.05;
+    margin-top: 0;
+    letter-spacing: -0.025em;
+  }
+}
+#container.gamak section {
+  padding: 160px 30px;
+}
+#container.gamak section.black {
+  background-image: -webkit-linear-gradient(top, #111 5%, #000 20%);
+}
+#container.gamak section .character {
+  max-width: 1200px;
+  transition: all 1.5s;
+  opacity: 0;
+  transform: translateY(-100px);
+}
+#container.gamak section .character .name, #container.gamak section .character .title {
+  opacity: 0;
+  margin-top: -50px;
+  transition: all 0.75s;
+}
+#container.gamak section .character.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#container.gamak section .character.active .name, #container.gamak section .character.active .title {
+  margin-top: 0;
+  opacity: 1;
+}
+#container.gamak section .character.active .name {
+  transition-delay: 0.3s;
+}
+#container.gamak section .character#gamak .name {
+  top: 350px;
+  right: 50px;
+}
+#container.gamak section .character#ina .name {
+  top: 250px;
+  right: 0;
+}
+#container.gamak section .character#ina .title {
+  top: 0;
+  left: 2%;
+}
+#container.gamak section .character#gaya .name {
+  top: 0;
+  left: 50px;
+}
+#container.gamak section .character#gaya .title {
+  bottom: 210px;
+  right: -120px;
+}
+#container.gamak section .character#gaya.active .title {
+  transition-delay: 0.8s;
 }
 
 /*# sourceMappingURL=contents.css.map */

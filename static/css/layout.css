@@ -10,12 +10,18 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: "Chosunilbo_myungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 #container {
-  width: 100vw;
-  height: 100vh;
   background: #101010;
+  overflow: hidden;
 }
 #container.mainIndex {
+  height: 100vh;
   background: #101010 url("/static/images/main_bg_text.png") no-repeat center center;
   overflow: hidden;
 }
@@ -162,7 +168,7 @@
 .bgArea .overlay {
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.8) 80%, rgb(0, 0, 0) 90%, rgb(0, 0, 0) 100%);
   z-index: 1;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -176,17 +182,74 @@
   left: 0;
 }
 
-#fullpage {
-  width: 100%;
-  height: 100%;
+#imageList section {
+  text-align: center;
 }
-#fullpage .section {
-  width: 100%;
+#imageList section.light {
+  background: #fdfdfd;
+}
+#imageList section.black {
+  background: #000;
+}
+#imageList section .character {
+  position: relative;
   height: 100%;
+  display: inline-block;
+}
+#imageList section .character .main {
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+}
+#imageList section .character .main img {
+  max-width: 100%;
+  max-height: unset;
+}
+#imageList section .character .name {
+  position: absolute;
+}
+#imageList section .character .title {
+  position: absolute;
 }
 
-.fp-watermark {
-  display: none;
+.btn.back {
+  z-index: 100;
+  position: fixed;
+  bottom: 50px;
+  right: 120px;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  max-width: 256px;
+  max-height: 256px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxnIGZpbGw9IiMwMDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMjYuMDYgNC45NGExLjUgMS41IDAgMCAxIDAgMi4xMkwxNy4xMjIgMTZsOC45NCA4Ljk0YTEuNSAxLjUgMCAwIDEtMi4xMjIgMi4xMmwtMTAtMTBhMS41IDEuNSAwIDAgMSAwLTIuMTJsMTAtMTBhMS41IDEuNSAwIDAgMSAyLjEyMiAweiIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMSIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCI+PC9wYXRoPjxwYXRoIGQ9Ik0xNi4wNiA0Ljk0YTEuNSAxLjUgMCAwIDEgMCAyLjEyTDcuMTIyIDE2bDguOTQgOC45NGExLjUgMS41IDAgMCAxLTIuMTIyIDIuMTJsLTEwLTEwYTEuNSAxLjUgMCAwIDEgMC0yLjEybDEwLTEwYTEuNSAxLjUgMCAwIDEgMi4xMjIgMHoiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjEiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPg==);
+  transition: all 0.3s;
+  margin-right: 0;
+  filter: drop-shadow(2px 4px 14px cyan);
+}
+.btn.back:hover {
+  margin-right: 10px;
+  filter: drop-shadow(0 0 30px cyan);
+}
+
+.btn.top {
+  z-index: 100;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  max-width: 256px;
+  max-height: 256px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTE0Ljk0IDguOTRhMS41IDEuNSAwIDAgMSAyLjEyIDBsMTAgMTBhMS41IDEuNSAwIDAgMS0yLjEyIDIuMTJMMTYgMTIuMTIybC04Ljk0IDguOTRhMS41IDEuNSAwIDAgMS0yLjEyLTIuMTIyeiIgY2xpcC1ydWxlPSJldmVub2RkIiBvcGFjaXR5PSIxIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iIj48L3BhdGg+PC9nPjwvc3ZnPg==);
+  transition: all 0.3s;
+  margin-bottom: 0;
+  filter: drop-shadow(2px 4px 14px cyan);
+}
+.btn.top:hover {
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px cyan);
 }
 
 /*# sourceMappingURL=layout.css.map */

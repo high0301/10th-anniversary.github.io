@@ -6,45 +6,118 @@
     <link rel="stylesheet" href="../static/css/reset.css">
     <link rel="stylesheet" href="../static/css/layout.css">
     <link rel="stylesheet" href="../static/css/contents.css">
-    <link rel="stylesheet" href="../static/lib/fullpage.js/dist/fullpage.css">
     <script
             src="https://code.jquery.com/jquery-3.7.1.slim.js"
             integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="../static/lib/fullpage.js/dist/fullpage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="../static/lib/fullpage.js/vendors/easings.js"></script>
+    <script src="../static/js/bg.js"></script>
+    <script src="../static/js/common.js"></script>
 </head>
 <body>
 <div id="container" class="gamak">
+    <div class="btnArea">
+        <button type="button" class="btn back" onclick="pageBack();"></button>
+        <button type="button" class="btn top" onclick="goTop();"></button>
+    </div>
     <div class="bgArea">
         <div class="overlay"></div>
         <div class="layerWrap">
-
         </div>
     </div>
     <main>
-        <div id="fullpage">
-            <section class="section">
-                <div class="main"><img src="" alt=""></div>
-                <div class="name"></div>
-                <div class="title"></div>
+        <h1>가막미르</h1>
+        <div id="imageList">
+            <section>
+                <div class="character" id="gamak">
+                    <div class="main"><img src="../static/images/gamak/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/gamak/name.png" alt=""></div>
+                </div>
             </section>
-            <section class="section">
-                2
+            <section>
+                <div class="character" id="ina">
+                    <div class="main"><img src="../static/images/ina/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/ina/name.png" alt=""></div>
+                    <div class="title"><img src="../static/images/ina/title.png" alt=""></div>
+                </div>
             </section>
-            <section class="section">
-                3
+            <section class="black">
+                <div class="character" id="gaya">
+                    <div class="main"><img src="../static/images/gaya/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/gaya/name.png" alt=""></div>
+                    <div class="title"><img src="../static/images/gaya/title.png" alt=""></div>
+                </div>
             </section>
         </div>
     </main>
 </div>
 <script>
-    new fullpage('#fullpage', {
-        //options here
-        autoScrolling:true,
-        scrollHorizontally: true
-    });
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#gamak',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#gamak").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#gamak").addClass("active");
+            },
+            onLeave: function () {
+                $("#gamak").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#gamak").removeClass("active");
+            }
+        },
+        duration: 1
+    })
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#ina',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#ina").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#ina").addClass("active");
+            },
+            onLeave: function () {
+                $("#ina").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#ina").removeClass("active");
+            }
+        },
+        duration: 1
+    })
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#gaya',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#gaya").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#gaya").addClass("active");
+            },
+            onLeave: function () {
+                $("#gaya").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#gaya").removeClass("active");
+            }
+        },
+        duration: 1
+    })
 </script>
 </body>
 </html>

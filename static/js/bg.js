@@ -4,7 +4,7 @@ window.onload = function () {
 
 
     var ww=$(window).width();
-    var wh=$(window).height();
+    var wh= document.querySelector('#container').scrollHeight;
 
     var dpi=window.devicePixelRatio;
     var cw=ww*dpi;

@@ -6,4 +6,87 @@ html, body {
 
 #container.gamak {
   color: #fff;
+  h1 {
+    font-size: 400px;
+    font-family: $chosun;
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    letter-spacing: -0.025em;
+    white-space: nowrap;
+    animation: h1-ani1 2s 0.2s forwards cubic-bezier(0.65, 0.05, 0.36, 1) ;
+  }
+  @keyframes h1-ani1 {
+    0% {
+      opacity: 0;
+      //margin-top: -100px;
+      letter-spacing: -0.5em;
+    }
+    100% {
+      opacity: 0.05;
+      margin-top: 0;
+      letter-spacing: -0.025em;
+    }
+  }
+  section {
+    padding: 160px 30px;
+    &.black {
+      background-image: -webkit-linear-gradient(top, #111 5%, #000 20%);
+    }
+    .character {
+      max-width: 1200px;
+      transition: all 1.5s;
+      opacity: 0;
+      transform: translateY(-100px);
+      .name, .title {
+        opacity: 0;
+        margin-top: -50px;
+        transition: all 0.75s;
+      }
+      &.active {
+        opacity: 1;
+        transform: translateY(0);
+        .name, .title {
+          margin-top: 0;
+          opacity: 1;
+        }
+        .name {
+          transition-delay: 0.3s;
+        }
+      }
+      &#gamak {
+        .name {
+          top: 350px;
+          right: 50px;
+        }
+      }
+      &#ina {
+        .name {
+          top: 250px;
+          right: 0;
+        }
+        .title {
+          top: 0;
+          left: 2%;
+        }
+      }
+      &#gaya {
+        .name {
+          top: 0;
+          left: 50px;
+        }
+        .title {
+          bottom: 210px;
+          right: -120px;
+        }
+        &.active {
+          .title {
+            transition-delay: 0.8s;
+          }
+        }
+      }
+    }
+  }
 }
