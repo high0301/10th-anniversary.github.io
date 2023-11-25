@@ -1,0 +1,37 @@
+// 컬러칩
+$color_cyan: #17cfdf;
+
+//폰트
+$Pretendard: 'Pretendard', Arial, sans-serif;
+
+//공용 변수
+
+//믹스인
+@mixin ico-fit($url, $w, $h) { display: inline-block; background: center no-repeat; background-size: 100%; background-image: url($url); width: $w; height: $h;
+}
+@mixin ico-notFit($url, $w, $h, $pos) { display: inline-block; background-repeat: no-repeat; background-size: $w $h; background-image: url($url); background-position: $pos; }
+@mixin font($font, $weight) {
+  font-family: $font;
+  font-weight: $weight;
+}
+@mixin flex($justify) { display: flex; align-items: center; justify-content: $justify; }
+@mixin bg($url, $posX, $posY) { background: url($url) no-repeat $posX $posY; }
+
+@mixin no-scroll { &::-webkit-scrollbar { display: none; } }
+@mixin lineCrop($h, $line) { white-space: normal; height: $h; word-wrap: break-word; display: -webkit-box !important; -webkit-line-clamp: $line; -webkit-box-orient: vertical; overflow: hidden; }
+@mixin textHeightReset { line-height: 1; }
+@mixin backgroundFit($size) { background-size: $size; background-position: center; }
+
+//탭 갯수 지정
+@mixin tab-n($n) {
+  li { width: 100%/$n; }
+}
+
+//닫기(X) 버튼
+@mixin closeBtn($w, $h, $bgColor) {
+  width: $w; height: $h; position: relative;
+  span { width: 100%; height: 2px; background: $bgColor; display: block; position: absolute; top: $h/2 - 1px;
+    &:nth-of-type(1) { transform: rotate(45deg); }
+    &:nth-of-type(2) { transform: rotate(-45deg); }
+  }
+}
