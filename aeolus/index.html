@@ -31,6 +31,13 @@
         <h1>아이올루스</h1>
         <div id="imageList">
             <section>
+                <div class="character" id="clark">
+                    <div class="main"><img src="../static/images/clark/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/clark/name.png" alt=""></div>
+                    <div class="title"><img src="../static/images/clark/title.png" alt=""></div>
+                </div>
+            </section>
+            <section>
                 <div class="character" id="noire">
                     <div class="main"><img src="../static/images/noire/main.png" alt=""></div>
                     <div class="name"><img src="../static/images/noire/name.png" alt=""></div>
@@ -86,6 +93,27 @@
 </div>
 <script>
     gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#clark',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#clark").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#clark").addClass("active");
+            },
+            onLeave: function () {
+                $("#clark").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#clark").removeClass("active");
+            }
+        },
+        duration: 1
+    })
     gsap.to('.character', {
         scrollTrigger:{
             trigger:'#noire',
