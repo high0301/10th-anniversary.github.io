@@ -3,83 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>가막미르 10주년 합작</title>
-    <link rel="stylesheet" href="../static/css/reset.css">
-    <link rel="stylesheet" href="../static/css/layout.css">
-    <link rel="stylesheet" href="../static/css/contents.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/layout.css">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.slim.js"
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-    <script src="../static/lib/fullpage.js/vendors/easings.js"></script>
-    <script src="../static/js/bg.js"></script>
-    <script src="../static/js/common.js"></script>
+
+    <script src="static/js/bg.js"></script>
+
 </head>
 <body>
-<div class="bgm"></div>
-<div id="page">
-    <div id="container" class="mainIndex">
-        <div class="bgArea">
-            <div class="overlay"></div>
-            <div class="layerWrap">
+<div id="container" class="mainIndex">
+    <div class="bgArea">
+        <div class="overlay"></div>
+        <div class="layerWrap">
 
-            </div>
         </div>
-        <main>
-            <h1>
-                <img src="static/images/main_text2.png" alt="더 월드">
-            </h1>
-            <h2>접속 가능 세계</h2>
-            <div class="bottom-bar">
-                <strong class="title"><img src="static/images/main_text1.png" alt="시스템"></strong>
-            </div>
-            <ul class="world">
-                <li class="gamak">
-                    <a href="#" onclick="callContent('gamak/'); return false;">
-                        <div class="imgBox">
-                            <strong class="title">
-                                <img src="static/images/world_text1.png" alt="가막미르">
-                            </strong>
-                        </div>
-                    </a>
-                </li>
-                <li class="solomon">
-                    <a href="solomon/">
-                        <div class="imgBox">
-                            <strong class="title">
-                                <img src="static/images/world_text2.png" alt="솔로몬의 천국">
-                            </strong>
-                        </div>
-                    </a>
-                </li>
-                <li class="aeolus">
-                    <a href="aeolus/">
-                        <div class="imgBox">
-                            <strong class="title">
-                                <img src="static/images/world_text3.png" alt="아이올루스">
-                            </strong>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </main>
     </div>
+    <main>
+        <h1>
+            <img src="static/images/main_text2.png" alt="더 월드">
+        </h1>
+        <h2>접속 가능 세계</h2>
+        <div class="bottom-bar">
+            <strong class="title"><img src="static/images/main_text1.png" alt="시스템"></strong>
+        </div>
+        <ul class="world">
+            <li class="gamak">
+                <a href="gamak/">
+                    <div class="imgBox">
+                        <strong class="title">
+                            <img src="static/images/world_text1.png" alt="가막미르">
+                        </strong>
+                    </div>
+                </a>
+            </li>
+            <li class="solomon">
+                <a href="solomon/">
+                    <div class="imgBox">
+                        <strong class="title">
+                            <img src="static/images/world_text2.png" alt="솔로몬의 천국">
+                        </strong>
+                    </div>
+                </a>
+            </li>
+            <li class="aeolus">
+                <a href="aeolus/">
+                    <div class="imgBox">
+                        <strong class="title">
+                            <img src="static/images/world_text3.png" alt="아이올루스">
+                        </strong>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </main>
 </div>
-
-<script>
-    function callContent(url){
-        $.ajax({
-            type:"POST",
-            url:url,
-            dataType : "html",
-            success: function(html){
-                $("#page").html(html);
-
-            },
-            error: function(xhr, status, error) {
-                alert(error);
-                //호출하지 못했을 경우 알럿창
-            }
-        });
-    }
-</script>
 </body>
 </html>
