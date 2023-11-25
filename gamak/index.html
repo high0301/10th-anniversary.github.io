@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>가막미르 10주년 합작 - 가막미르</title>
-    <link rel="stylesheet" href="static/css/reset.css">
-    <link rel="stylesheet" href="static/css/layout.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/layout.css">
+    <link rel="stylesheet" href="../static/css/contents.css">
+    <link rel="stylesheet" href="../static/lib/fullpage.js/dist/fullpage.css">
     <script
             src="https://code.jquery.com/jquery-3.7.1.slim.js"
             integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-    <script src="static/js/bg.js"></script>
-
+    <script src="../static/lib/fullpage.js/dist/fullpage.js"></script>
+    <script src="../static/lib/fullpage.js/vendors/easings.js"></script>
 </head>
 <body>
 <div id="container" class="gamak">
@@ -23,8 +24,27 @@
         </div>
     </div>
     <main>
-
+        <div id="fullpage">
+            <section class="section">
+                <div class="main"><img src="" alt=""></div>
+                <div class="name"></div>
+                <div class="title"></div>
+            </section>
+            <section class="section">
+                2
+            </section>
+            <section class="section">
+                3
+            </section>
+        </div>
     </main>
 </div>
+<script>
+    new fullpage('#fullpage', {
+        //options here
+        autoScrolling:true,
+        scrollHorizontally: true
+    });
+</script>
 </body>
 </html>
