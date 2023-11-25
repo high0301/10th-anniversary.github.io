@@ -37,7 +37,7 @@ window.onload = function () {
                 width:ww,
                 height:wh
             })
-            .appendTo("body .bgArea")
+            .appendTo("body .bgArea .layerWrap")
         ;
         var ctx=$layer.get(0).getContext("2d");
         ctx.fillStyle="#00f6ff";

@@ -1,8 +1,8 @@
 @import "mixin";
-
 #container {
   width: 100vw;
   height: 100vh;
+  background: #101010;
   &.mainIndex {
     background: #101010 url('/static/images/main_bg_text.png') no-repeat center center;
     overflow: hidden;
@@ -46,6 +46,18 @@
           position: absolute;
           max-height: unset;
         }
+      }
+      h2 {
+        font-size: 13px;
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: $Bookk;
+        opacity: 0;
+        animation: index-ani1 1s 0s forwards;
       }
     }
     .world {
@@ -136,7 +148,14 @@
 
 .bgArea {
   .overlay {
-
+    background: radial-gradient(ellipse at center, rgba(0,0,0,.0) 10%, rgba(0,0,0,.8) 80%, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%);
+    z-index: 1;
+    position: absolute;
+    top:0;left:0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    pointer-events: none;
   }
   .layer{
     position:absolute;
