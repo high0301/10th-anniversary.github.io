@@ -17,6 +17,7 @@
   font-style: normal;
 }
 #container {
+  position: relative;
   background: #101010;
   overflow: hidden;
 }

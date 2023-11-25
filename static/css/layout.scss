@@ -1,5 +1,6 @@
 @import "mixin";
 #container {
+  position: relative;
   background: #101010;
   overflow: hidden;
   &.mainIndex {

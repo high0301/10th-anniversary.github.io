@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>가막미르 10주년 합작 - 가막미르</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/layout.css">
+    <link rel="stylesheet" href="../static/css/contents.css">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.slim.js"
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="../static/lib/fullpage.js/vendors/easings.js"></script>
+    <script src="../static/js/bg.js"></script>
+    <script src="../static/js/common.js"></script>
+</head>
+<body>
+<div id="container" class="solomon">
+    <div class="btnArea">
+        <button type="button" class="btn back" onclick="pageBack();"></button>
+        <button type="button" class="btn top" onclick="goTop();"></button>
+    </div>
+    <div class="bgArea">
+        <div class="overlay"></div>
+        <div class="layerWrap">
+        </div>
+    </div>
+    <main>
+        <h1>솔로몬의 천국</h1>
+        <div id="imageList">
+            <section>
+                <div class="character" id="evening">
+                    <div class="main"><img src="../static/images/evening/main.png" alt=""></div>
+                    <div class="name"><img src="../static/images/evening/name.png" alt=""></div>
+                    <div class="title"><img src="../static/images/evening/title.png" alt=""></div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.character', {
+        scrollTrigger:{
+            trigger:'#evening',
+            start: "0% 50%",//시작 지점
+            end: "100% 50%",//끝 지점
+            scrub: 1,//부드러운 스크러빙
+            onEnter: function () {
+                $("#evening").addClass("active");
+            },
+            onEnterBack: function () {
+                $("#evening").addClass("active");
+            },
+            onLeave: function () {
+                $("#evening").removeClass("active");
+            },
+            onLeaveBack: function () {
+                $("#evening").removeClass("active");
+            }
+        },
+        duration: 1
+    })
+</script>
+</body>
+</html>
